@@ -1,0 +1,34 @@
+Task 3
+
+1. Парсинг файлов и добавление в h2db (В классе Controller записать пути к файлам)
+http://localhost:8080/upload
+
+Доступ к h2db
+http://localhost:8080/h2-console/login.jsp?jsessionid=93ef7605321a232784c8df5b638f852b
+Driver Class: org.h2.Driver
+JDBC URL: jdbc:h2:mem:testdb
+User Name - username
+Password - password
+
+
+2. Фильтрация
+Примеры:
+http://localhost:8080/filter?period=all&date=&authorizDeliveryFilter=
+http://localhost:8080/filter?period=day&date=25.07.2020&authorizDeliveryFilter=false
+http://localhost:8080/filter?period=month&date=08.2020&authorizDeliveryFilter=false
+http://localhost:8080/filter?period=quarter&date=3-2020&authorizDeliveryFilter=
+http://localhost:8080/filter?period=year&date=2020&authorizDeliveryFilter=true
+
+Формат ввода данных:
+period : "all", "day" , "month" , "quarter" ,"year"
+
+date : 
+"all" - "" (любое)
+"day" - "хх.хх.хххх" (день.месяц.год)
+"month" - "xx.xxxx"  (месяц.год)
+"quarter" - "x-xxxx" (Номер квартала-год)
+"year" - "xxxx"	     (год)
+
+authorizDeliveryFilter: "true", "false", ""
+При "" - выдает с true и false	
+
